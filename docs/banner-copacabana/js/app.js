@@ -46,16 +46,72 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
     if (lightboxNext) lightboxNext.addEventListener('click', showNext);
 
-    // Fechar ao clicar fora da imagem
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-    });
+    // Video Tour Modal Elements
+    const videoModal = document.getElementById('videoModal');
+    const btnOpenVideoModal = document.getElementById('btnOpenVideoModal');
+    const btnCloseVideoModal = document.getElementById('btnCloseVideoModal');
+    const videoModalOverlay = document.getElementById('videoModalOverlay');
+    const fullTourVideo = document.getElementById('fullTourVideo');
+    const heroVideoBg = document.querySelector('.hero-video-bg');
+
+    function openVideoModal() {
+        if (!videoModal) return;
+        videoModal.classList.add('active');
+        videoModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        
+        // Pausar o vídeo background da hero para economizar CPU/Bateria
+        if (heroVideoBg) {
+            heroVideoBg.pause();
+        }
+
+        // Tocar o vídeo tour completo
+        if (fullTourVideo) {
+            fullTourVideo.play().catch(err => console.log('Autoplay bloqueado pelo navegador:', err));
+        }
+    }
+
+    function closeVideoModal() {
+        if (!videoModal) return;
+        videoModal.classList.remove('active');
+        videoModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+
+        // Pausar e resetar o vídeo completo
+        if (fullTourVideo) {
+            fullTourVideo.pause();
+            fullTourVideo.currentTime = 0;
+        }
+
+        // Retomar o vídeo background em loop
+        if (heroVideoBg) {
+            heroVideoBg.play().catch(() => {});
+        }
+    }
+
+    if (btnOpenVideoModal) {
+        btnOpenVideoModal.addEventListener('click', openVideoModal);
+    }
+
+    if (btnCloseVideoModal) {
+        btnCloseVideoModal.addEventListener('click', closeVideoModal);
+    }
+
+    if (videoModalOverlay) {
+        videoModalOverlay.addEventListener('click', closeVideoModal);
+    }
 
     // Teclas do teclado
     document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showPrev();
-        if (e.key === 'ArrowRight') showNext();
+        if (videoModal && videoModal.classList.contains('active')) {
+            if (e.key === 'Escape') closeVideoModal();
+            return;
+        }
+
+        if (lightbox && lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        }
     });
 });

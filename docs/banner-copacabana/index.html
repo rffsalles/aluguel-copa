@@ -31,13 +31,19 @@
             <a href="#precos">Tabela de Preços</a>
             <a href="#regras">Regras</a>
             <a href="https://wa.me/5565999713323?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana..." target="_blank" class="btn-nav-wa">
-                💬 Reservar no WhatsApp
+                💬 <span class="wa-btn-text-full">Reservar no WhatsApp</span><span class="wa-btn-text-short">Reservar</span>
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero">
+        <video class="hero-video-bg" autoplay loop muted playsinline poster="videos/poster-apartamento.jpg">
+            <source src="videos/apartamento-hero-loop.webm" type="video/webm">
+            <source src="videos/apartamento-hero-loop.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
             <div class="hero-badge">⭐ Aluguel de Temporada no Rio</div>
             <h1 class="hero-title">Copacabana – Rio de Janeiro</h1>
@@ -56,6 +62,9 @@
                 <a href="https://wa.me/5565999713323?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana..." target="_blank" class="btn-primary">
                     💬 Consultar Disponibilidade
                 </a>
+                <button id="btnOpenVideoModal" class="btn-gold-tour">
+                    <span class="play-icon">▶</span> Assistir Tour em Vídeo HD
+                </button>
                 <a href="#localizacao" class="btn-secondary">
                     📍 Ver Localização no Mapa
                 </a>
@@ -429,8 +438,26 @@
             <span>Capacidade para até 6 pessoas</span>
         </div>
         <a href="https://wa.me/5565999713323?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana..." target="_blank" class="btn-cta-wa">
-            💬 Reservar via WhatsApp (65) 99971-3323
+            💬 <span class="cta-btn-text-full">Reservar via WhatsApp (65) 99971-3323</span><span class="cta-btn-text-short">Reservar via WhatsApp</span>
         </a>
+    </div>
+
+    <!-- Modal Tour em Vídeo HD -->
+    <div id="videoModal" class="video-modal" aria-hidden="true">
+        <div class="video-modal-overlay" id="videoModalOverlay"></div>
+        <div class="video-modal-container">
+            <button class="video-modal-close" id="btnCloseVideoModal" aria-label="Fechar Vídeo">&times;</button>
+            <div class="video-modal-header">
+                <h3>🎬 Tour Virtual pelo Imóvel</h3>
+                <p>Copacabana Posto 6 – Av. N. Sra. de Copacabana, 1181 (Edifício Kenya)</p>
+            </div>
+            <div class="video-player-wrapper">
+                <video id="fullTourVideo" controls playsinline poster="videos/poster-apartamento.jpg">
+                    <source src="videos/apartamento-tour-completo.mp4" type="video/mp4">
+                    Seu navegador não suporta a exibição deste vídeo.
+                </video>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
