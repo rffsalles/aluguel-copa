@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartamento para Temporada em Copacabana | Rio de Janeiro</title>
+    <meta name="description" content="Aluguel de temporada em Copacabana Posto 6. 2 quartos (1 suíte), capacidade até 6 pessoas, portaria 24h, a 2 quadras da praia e em frente ao Supermercado Zona Sul.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <nav class="navbar">
+        <a href="#" class="nav-brand">
+            🏖️ Copacabana <span>Posto 6</span>
+        </a>
+        <div class="nav-links">
+            <a href="#localizacao">Localização</a>
+            <a href="#galeria">Fotos</a>
+            <a href="#comodidades">Sobre</a>
+            <a href="#precos">Tabela de Preços</a>
+            <a href="#regras">Regras</a>
+            <a href="https://wa.me/5565999713323?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana..." target="_blank" class="btn-nav-wa">
+                💬 Reservar no WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">⭐ Aluguel de Temporada no Rio</div>
+            <h1 class="hero-title">Copacabana – Rio de Janeiro</h1>
+            <p class="hero-subtitle">Conforto, localização privilegiada e segurança a poucos passos da praia (Posto 6).</p>
+            
+            <div class="hero-stats-bar">
+                <div class="stat-pill">👥 Até 6 Pessoas</div>
+                <div class="stat-pill">🛏️ 2 Quartos (1 Suíte)</div>
+                <div class="stat-pill">🚿 2 Banheiros</div>
+                <div class="stat-pill">📶 Wi-Fi Alta Velocidade</div>
+                <div class="stat-pill">🛡️ Portaria 24h</div>
+                <div class="stat-pill">🛒 Supermercado Zona Sul em Frente</div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="https://wa.me/5565999713323?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana..." target="_blank" class="btn-primary">
+                    💬 Consultar Disponibilidade
+                </a>
+                <a href="#localizacao" class="btn-secondary">
+                    📍 Ver Localização no Mapa
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section: Localização & Mapa Interativo -->
+    <section id="localizacao" class="section">
+        <div class="section-header">
+            <span class="section-tag">Localização Estratégica</span>
+            <h2 class="section-title">Perto de Tudo em Copacabana</h2>
+            <p class="section-desc">Localizado na Av. Nossa Senhora de Copacabana, 1181 (Edifício Kenya), uma rua paralela à orla com fácil acesso a praias, transportes e comércios.</p>
+        </div>
+
+        <div class="location-grid">
+            <!-- Mapa Leaflet -->
+            <div class="map-card">
+                <div id="map"></div>
+            </div>
+
+            <!-- Lista de Pontos Próximos -->
+            <div class="location-info">
+                <div class="address-box">
+                    <h4>📍 Endereço do Imóvel</h4>
+                    <p><strong>Av. Nossa Senhora de Copacabana, 1181 – Edifício Kenya</strong><br>Copacabana – Rio de Janeiro / RJ (CEP: 22070-011)</p>
+                </div>
+
+                <div class="poi-list">
+                    <div class="poi-item poi-highlight">
+                        <div class="poi-icon">🛒</div>
+                        <div class="poi-details">
+                            <h5>Supermercado Zona Sul</h5>
+                            <span>Praticamente em frente ao edifício</span>
+                        </div>
+                    </div>
+                    <div class="poi-item poi-highlight">
+                        <div class="poi-icon">🍔</div>
+                        <div class="poi-details">
+                            <h5>McDonald's</h5>
+                            <span>Na esquina ao lado (50m / 1 min a pé)</span>
+                        </div>
+                    </div>
+                    <div class="poi-item poi-highlight">
+                        <div class="poi-icon">🏋️</div>
+                        <div class="poi-details">
+                            <h5>Academias (Smart Fit / Bodytech)</h5>
+                            <span>Na mesma quadra (a poucos passos)</span>
+                        </div>
+                    </div>
+                    <div class="poi-item poi-highlight">
+                        <div class="poi-icon">💊</div>
+                        <div class="poi-details">
+                            <h5>Farmácias (Droga Raia & Pacheco)</h5>
+                            <span>Na mesma quadra</span>
+                        </div>
+                    </div>
+                    <div class="poi-item">
+                        <div class="poi-icon">🍽️</div>
+                        <div class="poi-details">
+                            <h5>Restaurantes & Bares (Belmonte, Carretão)</h5>
+                            <span>Gastronomia variada na mesma rua</span>
+                        </div>
+                    </div>
+                    <div class="poi-item">
+                        <div class="poi-icon">🏖️</div>
+                        <div class="poi-details">
+                            <h5>Praia de Copacabana (Posto 6)</h5>
+                            <span>Apenas 2 quadras (3 min a pé)</span>
+                        </div>
+                    </div>
+                    <div class="poi-item">
+                        <div class="poi-icon">🚇</div>
+                        <div class="poi-details">
+                            <h5>Metrô Estação General Osório</h5>
+                            <span>6 min a pé (450m)</span>
+                        </div>
+                    </div>
+                    <div class="poi-item">
+                        <div class="poi-icon">🏛️</div>
+                        <div class="poi-details">
+                            <h5>Forte de Copacabana & Colombo</h5>
+                            <span>8 min a pé (600m)</span>
+                        </div>
+                    </div>
+                    <div class="poi-item">
+                        <div class="poi-icon">🎨</div>
+                        <div class="poi-details">
+                            <h5>Feira Hippie de Ipanema (Praça Gen. Osório)</h5>
+                            <span>6 min a pé (450m)</span>
+                        </div>
+                    </div>
+                    <div class="poi-item">
+                        <div class="poi-icon">🌅</div>
+                        <div class="poi-details">
+                            <h5>Pedra do Arpoador (Pôr do Sol)</h5>
+                            <span>12 min a pé (900m)</span>
+                        </div>
+                    </div>
+                    <div class="poi-item">
+                        <div class="poi-icon">🌊</div>
+                        <div class="poi-details">
+                            <h5>Praia de Ipanema (Posto 8)</h5>
+                            <span>15 min a pé (1,1 km)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Galeria de Fotos -->
+    <section id="galeria" class="section" style="background: #F1F5F9; max-width: 100%; width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-header">
+                <span class="section-tag">Conheça o Imóvel & a Região</span>
+                <h2 class="section-title">Galeria de Fotos</h2>
+                <p class="section-desc">Clique nas imagens abaixo para ampliar e visualizar os ambientes do apartamento e da vizinhança.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/a0e9e350-e740-4527-9743-d45752b5b607 1.JPG" alt="Fachada e Rua do Apartamento">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/12089bfb-7573-4ef3-b1ed-3803fd9426c1.JPG" alt="Interior do Apartamento">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/2f0544fc-f5d3-47ab-bb02-7bcebcae1fa3.JPG" alt="Ambiente do Apartamento">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/45a1971d-a03c-452b-a8b7-1511637d0b77.JPG" alt="Acomodações do Imóvel">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/6bdcf7d6-b287-4bb1-91ca-02a123033c3b.JPG" alt="Detalhes do Imóvel">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/83aea5b1-f6e6-48b2-b34a-be6313d03421.JPG" alt="Estrutura do Apartamento">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/a0e9e350-e740-4527-9743-d45752b5b607 2.JPG" alt="Vista da Entrada">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/a0e9e350-e740-4527-9743-d45752b5b607.JPG" alt="Rua Conselheiro Lafaiete / N. Sra. Copacabana">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/a55fdf1b-69f9-4610-b0eb-3d4e08e14404.JPG" alt="Área Interna">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/ac7ef9b7-451e-441b-a66b-f31782d91300.JPG" alt="Conforto dos Quartos">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/b58c8cd8-e89f-4d3f-8fd1-120161fd14e8.JPG" alt="Ambiente Arejado">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/ccaef2bf-2c04-48fa-930f-c36cc4a771e3.JPG" alt="Detalhe do Imóvel">
+                    <div class="gallery-overlay">🔍 Expandir Foto</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Lightbox para Ampliar Fotos -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev">&#10094;</span>
+        <span class="lightbox-next">&#10095;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Imagem Ampliada">
+    </div>
+
+    <!-- Section: Sobre o Apartamento & Comodidades -->
+    <section id="comodidades" class="section">
+        <div class="section-header">
+            <span class="section-tag">Comodidade & Estrutura</span>
+            <h2 class="section-title">Sobre o Apartamento</h2>
+            <p class="section-desc">Imóvel totalmente mobiliado, espaçoso e planejado para garantir a melhor estadia em família ou grupo de amigos no Rio de Janeiro.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛏️</div>
+                <div class="feature-info">
+                    <h4>2 Quartos (1 Suíte)</h4>
+                    <p>Camas confortáveis, armários e ar-condicionado em ambos os quartos.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚿</div>
+                <div class="feature-info">
+                    <h4>2 Banheiros</h4>
+                    <p>Banheiro social amplo e banheiro de serviço conveniente.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❄️</div>
+                <div class="feature-info">
+                    <h4>Ar-Condicionado & TV Smart</h4>
+                    <p>Ar-condicionado e Smart TVs na sala e em todos os quartos.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📶</div>
+                <div class="feature-info">
+                    <h4>Wi-Fi Alta Velocidade</h4>
+                    <p>Internet de fibra óptica rápida para trabalho remoto e streaming.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🍳</div>
+                <div class="feature-info">
+                    <h4>Cozinha Completa</h4>
+                    <p>Equipada com geladeira, fogão, micro-ondas e utensílios completos.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧺</div>
+                <div class="feature-info">
+                    <h4>Área de Serviço</h4>
+                    <p>Máquina de lavar roupas e área de secagem ventilada.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-info">
+                    <h4>Segurança 24 Horas</h4>
+                    <p>Portaria presencial 24h, câmeras de monitoramento e elevadores modernos.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏋️</div>
+                <div class="feature-info">
+                    <h4>Academias & Comércio Completo</h4>
+                    <p>Supermercado Zona Sul na frente, McDonald's ao lado, academias e farmácias na quadra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Tabela de Preços -->
+    <section id="precos" class="section">
+        <div class="section-header">
+            <span class="section-tag">Transparência & Valores</span>
+            <h2 class="section-title">Tabela de Preços</h2>
+            <p class="section-desc">Valores válidos para capacidade total de até 6 (seis) hóspedes.</p>
+        </div>
+
+        <div class="pricing-table-container">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Período / Temporada</th>
+                        <th>Valor da Diária</th>
+                        <th>Estadia Mínima</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Baixa temporada</strong> – Domingo a Quinta</td>
+                        <td><span class="price-tag">R$ 750,00</span></td>
+                        <td>2 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Baixa temporada</strong> – Sexta e Sábado</td>
+                        <td><span class="price-tag">R$ 850,00</span></td>
+                        <td>2 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Média temporada</strong> – Domingo a Quinta</td>
+                        <td><span class="price-tag">R$ 850,00</span></td>
+                        <td>2 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Média temporada</strong> – Sexta e Sábado</td>
+                        <td><span class="price-tag">R$ 950,00</span></td>
+                        <td>2 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alta temporada / Verão</strong> – Domingo a Quinta</td>
+                        <td><span class="price-tag">R$ 1.000,00</span></td>
+                        <td>3 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alta temporada / Verão</strong> – Sexta e Sábado</td>
+                        <td><span class="price-tag">R$ 1.150,00</span></td>
+                        <td>3 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Feriados Prolongados</strong> <span class="badge-highlight">Tarifa Fim de Semana</span></td>
+                        <td><span class="price-tag">R$ 1.150,00 a R$ 1.300,00</span></td>
+                        <td>3 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grandes Eventos / Shows Especiais</strong></td>
+                        <td><span class="price-tag">R$ 1.300,00 a R$ 1.800,00</span></td>
+                        <td>3 a 4 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Carnaval</strong> 🎉</td>
+                        <td><span class="price-tag">R$ 1.600,00 a R$ 2.200,00</span></td>
+                        <td>4 a 5 noites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Réveillon</strong> 🥂</td>
+                        <td><span class="price-tag">R$ 2.100,00 a R$ 2.900,00</span></td>
+                        <td>5 a 7 noites</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pricing-notes">
+            <strong>ℹ️ Informações Adicionais sobre as Tarifas:</strong>
+            <ul>
+                <li>Os valores acima incluem o aluguel completo do imóvel para até <strong>6 (seis) hóspedes</strong>.</li>
+                <li><strong>Taxa de Limpeza única por estadia:</strong> R$ 280,00.</li>
+                <li><strong>Caução (Garantia Reembolsável):</strong> R$ 500,00 (paga na 2ª parcela e devolvida em até 7 dias úteis após check-out).</li>
+                <li>Em <strong>feriados prolongados e datas especiais</strong>, a tarifa adotada será a de <strong>fim de semana</strong> (sexta e sábado), mesmo nos dias de domingo a quinta.</li>
+                <li><strong>Validade do orçamento:</strong> 7 (sete) dias a partir da emissão.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section: Regras e Cancelamento -->
+    <section id="regras" class="section">
+        <div class="section-header">
+            <span class="section-tag">Condições de Hospedagem</span>
+            <h2 class="section-title">Regras do Imóvel & Cancelamento</h2>
+        </div>
+
+        <div class="rules-grid">
+            <div class="rules-card">
+                <h4>💳 Forma de Pagamento & Horários</h4>
+                <ul class="rules-list">
+                    <li><span class="icon">📝</span> <strong>50% do valor total</strong> no ato da reserva para garantia.</li>
+                    <li><span class="icon">🔑</span> <strong>50% restante + Caução (R$ 500)</strong> pagos até o check-in.</li>
+                    <li><span class="icon">🕒</span> <strong>Check-in:</strong> A partir das 14h.</li>
+                    <li><span class="icon">🕚</span> <strong>Check-out:</strong> Até às 11h.</li>
+                    <li><span class="icon">👥</span> <strong>Capacidade Máxima:</strong> Até 6 hóspedes.</li>
+                </ul>
+            </div>
+
+            <div class="rules-card">
+                <h4>⚠️ Regras da Casa & Cancelamento</h4>
+                <ul class="rules-list">
+                    <li><span class="icon">🚭</span> <strong>Não é permitido fumar</strong> no interior do apartamento.</li>
+                    <li><span class="icon">🚫</span> <strong>Não são permitidas festas</strong> ou eventos de qualquer natureza.</li>
+                    <li><span class="icon">🐾</span> <strong>Animais de estimação:</strong> Apenas mediante consulta prévia.</li>
+                    <li><span class="icon">🔄</span> <strong>Cancelamento > 30 dias antes:</strong> Devolução de 90% do valor pago.</li>
+                    <li><span class="icon">🔄</span> <strong>Cancelamento 29 a 15 dias antes:</strong> Devolução de 50% do valor pago.</li>
+                    <li><span class="icon">❌</span> <strong>Cancelamento < 15 dias / No-show:</strong> Sem devolução.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp CTA Bar -->
+    <div class="floating-cta">
+        <div class="cta-text">
+            <strong>Apartamento em Copacabana (Posto 6)</strong>
+            <span>Capacidade para até 6 pessoas</span>
+        </div>
+        <a href="https://wa.me/5565999713323?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20apartamento%20em%20Copacabana..." target="_blank" class="btn-cta-wa">
+            💬 Reservar via WhatsApp (65) 99971-3323
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

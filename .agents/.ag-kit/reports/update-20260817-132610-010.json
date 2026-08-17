@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "runId": "20260817-132610-010",
+  "strategy": "merge",
+  "toolkitVersion": "2026.7.27",
+  "createdAt": "2026-08-17T13:26:10.200Z",
+  "backupDir": "C:\\projects\\aluguel-copa\\.ag-kit-backups\\20260817-132610-010",
+  "summary": {
+    "actions": 0,
+    "conflicts": 0,
+    "preserved": 0,
+    "unchanged": 221
+  },
+  "actions": [],
+  "conflicts": [],
+  "preserved": []
+}

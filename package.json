@@ -1,0 +1,23 @@
+{
+  "name": "aluguel-copacabana",
+  "version": "1.0.0",
+  "description": "Apresentação e Banner Digital para Aluguel de Temporada em Copacabana (Edifício Kenya)",
+  "main": "docs/banner-copacabana/index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "snapshot": "node docs/banner-copacabana/generate-map-snapshot.js",
+    "export": "node docs/banner-copacabana/export-banner.js",
+    "build": "npm run snapshot && npm run export"
+  },
+  "keywords": [
+    "copacabana",
+    "aluguel-temporada",
+    "rio-de-janeiro",
+    "banner-digital"
+  ],
+  "dependencies": {
+    "express": "^4.19.2",
+    "playwright": "^1.40.0"
+  }
+}
